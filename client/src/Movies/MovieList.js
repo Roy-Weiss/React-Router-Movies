@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
+import Movie from './Movie';
 
 export default function MovieList(props) {
   return (
@@ -11,7 +13,8 @@ export default function MovieList(props) {
 }
 
 function MovieDetails(props) {
-  const { title, director, metascore } = props.movie;
+  const { id, title, director, metascore } = props.movie;
+  let history = useHistory();
 
   return (
     <div className="movie-card">
@@ -25,3 +28,5 @@ function MovieDetails(props) {
     </div>
   );
 }
+
+
